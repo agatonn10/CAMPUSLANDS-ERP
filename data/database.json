@@ -1,0 +1,24 @@
+{
+    "campers": [],
+    "trainers": [
+        {
+            "id": 1231231,
+            "nombre": "juan ",
+            "apellido": "dav",
+            "especialidad": "java",
+            "disponibilidad": "lunes a viernes 9am-12pm"
+        }
+    ],
+    "coordinators": [
+        {
+            "id": 21314141,
+            "nombre": "juan",
+            "apellido": "dav",
+            "telefono": "12412491249",
+            "estado": "Activo"
+        }
+    ],
+    "routes": [],
+    "enrollments": [],
+    "evaluations": []
+}
