@@ -30,10 +30,10 @@ def register_camper():
         "id": int(input("ID: ")),
         "nombre": input("Nombre: "),
         "apellido": input("Apellido: "),
-        "dirección": input("Dirección: "),
+        "direccion": input("Dirección: "),
         "acudiente": input("Nombre del acudiente: "),
         "telefono": int(input("Teléfono (#celular, #fijo): ")),
-        "estado": "en preoceso de estado...",
+        "estado": "en proceso de estado...",
         "riesgo": "sin riesgo..."
     }
     data["campers"].append(camper)

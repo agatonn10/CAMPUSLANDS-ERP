@@ -1,5 +1,26 @@
 {
-    "campers": [],
+    "campers": [
+        {
+            "id": 12345,
+            "nombre": "jorge david",
+            "apellido": "rojas",
+            "direcci\u00c3\u00b3n": "bucaramanga",
+            "acudiente": "sara lucia",
+            "telefono": 320103124,
+            "estado": "aprobado",
+            "riesgo": "alto"
+        },
+        {
+            "id": 1234,
+            "nombre": "sara lopez",
+            "apellido": "gome",
+            "direcci\u00f3n": "bucaros",
+            "acudiente": "maria",
+            "telefono": 12341515,
+            "estado": "en preoceso de estado...",
+            "riesgo": "sin riesgo..."
+        }
+    ],
     "trainers": [
         {
             "id": 1231231,
