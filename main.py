@@ -14,22 +14,21 @@ def main():
         print("=============================")
         
         opcion = input("Seleccione una opción: ")
-        
         match opcion:
             case "1":
-                campers.menu_campers()
+                campers.menu()
             case "2":
-                trainers.menu_trainers()
+                trainers.menu()
             case "3":
-                coordinators.menu_coordinators()
+                coordinators.menu()
             case "4":
-                routes.menu_routes()
+                routes.menu()
             case "5":
-                enrollments.menu_enrollments()
+                enrollments.menu()
             case "6":
-                evaluations.menu_evaluations()
+                evaluations.menu()
             case "7":
-                reports.menu_reports()
+                reports.menu()
             case "0":
                 print("👋 Saliendo del sistema...")
                 break

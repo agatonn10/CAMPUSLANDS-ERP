@@ -1,14 +1,19 @@
 from modules.utils import load_data, save_data
 
-def menu_coordinators():
+def menu():
     while True:
-        print("=======GESTIÓN DE COORDINADORES=======")
+        print("======= GESTIÓN DE COORDINADORES =======")
         print("1) Evaluar al Camper")
         print("2) Listar Campers en proceso de ingreso")
         print("0) Volver")
-        print("=======================================")
+        print("========================================")
         
-        opcion = input("Seleccione una opción: ")
+        try:
+            opcion = input("Seleccione una opción: ")
+
+        except ValueError:
+            
+            print("Error")
         
         match opcion:
             case "1":
@@ -16,11 +21,11 @@ def menu_coordinators():
             case "2":
                 list_coordinators()
             case "0":
-                print("👋 Volviendo...")
+                print("👋 Volviendo al menú principal...")
                 return
             case _:
                 print("❌ SELECCIONA ALGO VALIDO... ")
-                return
+                
         
 def evaluate_coordinator():
     data = load_data()

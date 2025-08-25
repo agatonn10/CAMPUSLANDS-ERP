@@ -1,6 +1,6 @@
 from modules.utils import load_data, save_data
 
-def menu_campers():
+def menu():
     while True:
         print("=======GESTIÓN DE CAMPERS=======")
         print("1) Registrar Camper")
@@ -8,7 +8,12 @@ def menu_campers():
         print("0) Volver al Menú")
         print("===============================")
         
-        opcion = input("Seleccione una opción: ")
+        try:
+            opcion = input("Seleccione una opción: ")
+        
+        except ValueError:
+
+            print("Error")
         
         match opcion:
             case "1":
@@ -20,7 +25,7 @@ def menu_campers():
                 return
             case _:
                 print("❌ SELECCIONA ALGO VALIDO... ")
-                return
+                
 
 
 def register_camper():

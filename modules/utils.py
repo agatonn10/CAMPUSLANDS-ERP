@@ -1,6 +1,6 @@
 import json
 
-BASE_DATOS = "data/database.json"
+BASE_DATOS = "CAMPUSLANDS-ERP/data/database.json"
 
 def load_data():
     try:

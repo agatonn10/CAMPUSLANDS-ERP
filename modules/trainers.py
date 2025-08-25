@@ -1,6 +1,6 @@
 from modules.utils import load_data, save_data
 
-def menu_trainers():
+def menu():
     while True:
         print("======= GESTIÓN DE TRAINERS =======")
         print("1) Registrar Trainer")
@@ -8,8 +8,13 @@ def menu_trainers():
         print("0) Volver al Menú")
         print("===================================")
         
-        opcion = input("Seleccione una opción: ")
+        try:
+            opcion = input("Seleccione una opción: ")
         
+        except ValueError:
+            
+            print("Error")
+
         match opcion:
             case "1":
                 register_trainer()    
@@ -20,7 +25,7 @@ def menu_trainers():
                 return
             case _:
                 print("❌ SELECCIONA ALGO VÁLIDO... ")
-                return
+                
 
 
 def register_trainer():
@@ -42,7 +47,10 @@ def register_trainer():
 
 def list_trainers():
     data = load_data()
-    print("\n===== LISTA DE TRAINERS =====")
+    print("===== LISTA DE TRAINERS =====")
     for trainer in data["trainers"]:
         print(f"ID: {trainer['id']}  Nombre: {trainer['nombre']} {trainer['apellido']} "
               f"Especialidad: {trainer['especialidad']} dispoibilidad: {trainer['disponibilidad']}")
+        
+
+
