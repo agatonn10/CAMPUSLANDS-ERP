@@ -10,6 +10,7 @@ def main():
         print("5) Matriculas")
         print("6) Evaluaciones")
         print("7) Reportes")
+        print("8) Recalibracion")
         print("0) Salir")
         print("=============================")
         
@@ -29,6 +30,8 @@ def main():
                 evaluations.menu()
             case "7":
                 reports.menu()
+            case "8":
+                recalibration.menu()
             case "0":
                 print("👋 Saliendo del sistema...")
                 break
