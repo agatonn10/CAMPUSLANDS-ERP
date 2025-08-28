@@ -72,8 +72,8 @@ def assign_R():
     # Listar campers aprobados
     print("\n👥 Campers aprobados:")
     for c in campers:
-        if c['estado'] == 'Aprobado':
-            print(f"{c['id']} - {c['nombre']} {c['apellidos']}")
+        if c['estado'] == 'aprobado':
+            print(f"{c['id']} - {c['nombre']} {c['apellido']}")
             aprobados.append(c['id'])
 
     if not aprobados:
@@ -84,15 +84,15 @@ def assign_R():
         print("⚠️ No hay rutas disponibles. Primero crea una ruta.")
         return
 
-    camper_id = input("👉 Ingresa el ID del camper a asignar: ").strip()
+    camper_id = int(input("👉 Ingresa el ID del camper a asignar: ").strip())
 
     # Validar camper
-    camper = next((c for c in campers if c['id'] == camper_id and c['estado'] == 'Aprobado'), None)
+    camper = next((c for c in campers if c['id'] == camper_id and c['estado'] == 'aprobado'), None)
     if not camper:
         print("❌ Camper no encontrado o no está aprobado.")
         return
 
-    print(f"👉 Deseas asignar a {camper['id']} - {camper['nombre']} {camper['apellidos']} ")
+    print(f"👉 Deseas asignar a {camper['id']} - {camper['nombre']} {camper['apellido']} ")
     asignar = input('Ingrese "S" para sí y "N" para no: ').strip().upper()
 
     if asignar != 'S':

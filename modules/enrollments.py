@@ -37,10 +37,10 @@ def create_M():
     print("\n👨‍🎓 Campers aprobados con ruta asignada:")
     for c in campers:
         for r in routes:
-            if c["estado"] == "Aprobado" and c["id"] in r["campers_asignados"]:
+            if c["estado"] == "aprobado" and c["id"] in r["campers_asignados"]:
                 # verificar si ya está matriculado
                 if not any(e['camper_id'] == c['id'] for e in enrollments):
-                    print(f"{c['id']} - {c['nombre']} {c['apellidos']} (Ruta: {r['nombre']})")
+                    print(f"{c['id']} - {c['nombre']} {c['apellido']} (Ruta: {r['nombre']})")
                     disponibles.append(c)
 
     if not disponibles:
@@ -77,7 +77,7 @@ def create_M():
     trainers_ocupados = [e["trainer_id"] for e in enrollments]
 
     # Mostrar solo trainers libres
-    print("\n👨‍🏫 Trainers disponibles:")
+    print("Trainers disponibles:")
     trainers_disponibles = [t for t in trainers if t["id"] not in trainers_ocupados]
 
     if not trainers_disponibles:
@@ -85,10 +85,10 @@ def create_M():
         return
 
     for t in trainers_disponibles:
-        print(f"{t['id']} - {t['nombre']} {t['apellidos']} (Especialidad: {t['especialidad']})")
+        print(f"{t['id']} - {t['nombre']} {t['apellido']} (Especialidad: {t['especialidad']})")
 
     try:
-        trainer_id = int(input("👉 Ingresa el ID del trainer: "))
+        trainer_id = int(input("Ingresa el ID del trainer: "))
     except ValueError:
         print("❌ ID inválido.")
         return
@@ -129,7 +129,7 @@ def list_M():
         print("⚠️ No hay matrículas registradas aún.")
         return
 
-    print("\n--- Lista de Matrículas por Ruta ---")
+    print("====== Lista matrículas por Ruta ======")
 
     # Agrupar por ruta
     rutas = {}

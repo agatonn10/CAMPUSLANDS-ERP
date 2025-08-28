@@ -7,8 +7,8 @@
             "direcci\u00c3\u00b3n": "bucaramanga",
             "acudiente": "sara lucia",
             "telefono": 320103124,
-            "estado": "aprobado",
-            "riesgo": "medio"
+            "estado": "en proceso",
+            "riesgo": "sin riesgo"
         },
         {
             "id": 1234,
@@ -19,6 +19,16 @@
             "telefono": 12341515,
             "estado": "en preoceso de estado...",
             "riesgo": "sin riesgo..."
+        },
+        {
+            "id": 1,
+            "nombre": "rojas",
+            "apellido": "lopez",
+            "direccion": "bucaros",
+            "acudiente": "sara",
+            "telefono": 30151513253,
+            "estado": "aprobado",
+            "riesgo": "sin riesgo"
         }
     ],
     "trainers": [
@@ -39,7 +49,55 @@
             "estado": "Activo"
         }
     ],
-    "routes": [],
-    "enrollments": [],
-    "evaluations": []
+    "routes": [
+        {
+            "id": "1",
+            "nombre": "Java",
+            "duracion": "4 meses",
+            "modulos": [
+                "2"
+            ],
+            "campers_asignados": [
+                1
+            ]
+        }
+    ],
+    "enrollments": [
+        {
+            "camper_id": 1,
+            "camper_nombre": "rojas",
+            "route_nombre": "Java",
+            "trainer_id": 1231231,
+            "trainer_nombre": "juan ",
+            "salon": "Hunters"
+        }
+    ],
+    "evaluations": [
+        {
+            "camper_id": 1,
+            "camper_nombre": "rojas",
+            "route_nombre": "Java",
+            "nota_teorica": 70.0,
+            "nota_practica": 70.0,
+            "promedio": 70.0,
+            "estado": "Aprobado",
+            "riesgo": "Sin riesgo"
+        },
+        {
+            "camper_id": 1,
+            "camper_nombre": "rojas",
+            "route_nombre": "Java",
+            "nota_teorica": 70.0,
+            "nota_practica": 70.0,
+            "promedio": 70.0,
+            "estado": "aprobado",
+            "riesgo": "sin riesgo"
+        }
+    ],
+    "reports": [
+        {
+            "camper_id": 1,
+            "camper_nombre": "rojas lopez"
+        }
+    ]
 }

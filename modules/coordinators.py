@@ -35,7 +35,7 @@ def evaluate_coordinator():
         if camper["id"] == id_camper:
             print(f"Evaluando al camper: {camper['nombre']} {camper['apellido']}")
             estado ="en proceso"
-            match input("Estado (1)aprobado/2)rechazado/3)en proceso): "):
+            match input("Estado: (1)aprobado/2)rechazado/3)en proceso): "):
                 case "1":
                     estado = "aprobado"
                 case "2":
@@ -46,7 +46,7 @@ def evaluate_coordinator():
                     print("❌ Estado no valido, cambios no aplicados"),
             
             riesgo = "sin riesgo"
-            match input("1)alto/2)medio/3)bajo/4)sin riesgo): "):
+            match input("Riesgo: 1)alto/2)medio/3)bajo/4)sin riesgo): "):
                 case "1":
                     riesgo = "alto"
                 case "2":
@@ -64,7 +64,7 @@ def evaluate_coordinator():
             save_data(data)
             print("✅ Evaluación registrada exitosamente.")
             return
-    print("❌ No se creo un camper con esa ID.")
+    print("❌ No hay camper con esa ID.")
 
 def list_coordinators():
     data = load_data()

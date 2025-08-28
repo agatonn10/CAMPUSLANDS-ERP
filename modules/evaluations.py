@@ -8,7 +8,7 @@ def menu():
         print("0) Volver")
         print("=======================================")
 
-        opcion = input("👉 Ingrese una opción: ")
+        opcion = input("Ingrese una opción: ")
 
         match opcion:
             case "1":
@@ -19,7 +19,7 @@ def menu():
                 print("👋 Volviendo al menú principal...")
                 return
             case _:
-                print("❌ Selecciona una opción válida.")
+                print("❌ SELECCIONA ALGO VALIDO... ")
 
 def register_evaluations():
     data = load_data()
@@ -31,55 +31,50 @@ def register_evaluations():
         print("⚠️ No hay matrículas para evaluar.")
         return
     
-    print("\n📋 Campers matriculados:")
+    print("Campers matriculados:")
     for e in enrollments:
         print(f"{e['camper_id']} - {e['camper_nombre']} (Ruta: {e['route_nombre']})")
     
     try:
-        camper_id = int(input("👉 Ingresa el ID del camper a evaluar: "))
+        camper_id = int(input("Ingrese el ID del camper para evaluar: "))
     except ValueError:
-        print("❌ Debes ingresar un número válido.")
+        print("❌ ingrese algo valido... ")
         return
 
     # Buscar matrícula
     enrollment = next((e for e in enrollments if e["camper_id"] == camper_id), None)
 
     if not enrollment:
-        print("❌ El camper no está matriculado.")
+        print("❌ El camper no está matriculado...")
         return
 
-    # Verificar si ya tiene evaluación
-    for ev in evaluations:
-        if ev["camper_id"] == camper_id and ev["route_nombre"] == enrollment["route_nombre"]:
-            print(f"⚠️ El camper {enrollment['camper_nombre']} ya tiene evaluación registrada en {enrollment['route_nombre']}.")
-            return
 
     try:
-        nota_teorica = float(input("📝 Ingresa la nota teórica: "))
-        nota_practica = float(input("📝 Ingresa la nota práctica: "))
+        nota_teorica = float(input("Ingrese la nota teórica: "))
+        nota_practica = float(input("Ingrese la nota práctica: "))
 
         if not (0 <= nota_teorica <= 100 and 0 <= nota_practica <= 100):
-            print("❌ Las notas deben estar entre 0 y 100.")
+            print("❌ La nota no puede ser mayor q 100...")
             return
 
         promedio = (nota_teorica + nota_practica) / 2
     
         # Definir estado y riesgo
         if promedio >= 60:
-            estado = "Aprobado"
-            riesgo = "Sin riesgo"
+            estado = "aprobado"
+            riesgo = "sin riesgo"
         elif promedio >= 40:
-            estado = "En riesgo"
-            riesgo = "Medio"
+            estado = "en riesgo"
+            riesgo = "medio"
         else:
-            estado = "Reprobado"
-            riesgo = "Alto"
+            estado = "reprobado"
+            riesgo = "alto"
 
         # Actualizar camper en la base de datos
         for c in campers:
             if c["id"] == camper_id:
-                c["Estado"] = estado
-                c["Riesgo"] = riesgo
+                c["estado"] = estado
+                c["riesgo"] = riesgo
                 break
 
         evaluation = {
@@ -101,7 +96,7 @@ def register_evaluations():
               f"(Promedio: {promedio}, Estado: {estado}, Riesgo: {riesgo})")
 
     except ValueError:
-        print("❌ Entrada inválida, debes ingresar números.")
+        print("❌ ERROR, debes ingresar números.")
 
 def list_evaluations():
     data = load_data()

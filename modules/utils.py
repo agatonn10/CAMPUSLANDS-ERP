@@ -1,14 +1,21 @@
 import json
 
-BASE_DATOS = "CAMPUSLANDS-ERP-main/data/database.json"
+BASE_DATOS = "data/database.json"
 
 def load_data():
     try:
-        with open(BASE_DATOS, "r") as file:
+        with open(BASE_DATOS,"r") as file:
             return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
-        return {}
+        return {
+            "campers": [],
+            "trainers": [],
+            "coordinators": [],
+            "routes": [],
+            "enrollments": [],
+            "evaluations": []
+        }
     
 def save_data(data):
     with open(BASE_DATOS, "w") as file:
-        json.dump(data, file, indent=4)
+        json.dump(data, file,indent=4)
