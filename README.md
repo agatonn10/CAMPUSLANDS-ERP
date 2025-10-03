@@ -1,31 +1,66 @@
-**TRABAJO CAMPUSLANDS- ERP:**
+# Trabajo Campuslands - ERP
 
--EMPLEO DE LAS CALIFICACIONES BRINDAR ALGO MAS SENCILLO PARA Q LOS TRAINERS CAMPERS Y COORDINADORES NO SE MATEN LA CABEZA HACIENDO ALGO MAS MANUAL COLOCANDO SOLO LA NOTA Y LA MISMA APLICACION SE ENCARGA EN ASIGNARLE A CADA CAMPER SI ESTA EN RIESGO O A SIDO MATRICULADO O SU NOTA.
+## 🚀 Descripción del Proyecto
 
-**Q SE USO EN ESTE CODIGO:**
+El objetivo de este sistema es simplificar la gestión de calificaciones de los *trainers*, *campers* y *coordinadores*. La idea es automatizar los cálculos y generar los estados correspondientes (como *riesgo* o *matriculado*) para que no sea necesario realizar procesos manuales. 
 
-VISUAL STUDIO 
+Los usuarios solo deben ingresar la calificación de cada *camper* y el sistema se encarga de todo lo demás.
 
-PYTHON
+---
 
-DICCIONARIOS, CONDICIONALES, FORMULAS, CALCULOS, Y INGRESO DE DATOS.
+## 🛠️ Tecnologías Utilizadas
 
-**FORMA DE EMPLEO:**
+- **Visual Studio**: IDE de desarrollo.
+- **Python**: Lenguaje de programación principal.
+- **JSON**: Almacenamiento de datos persistente.
+- **Diccionarios, Condicionales, Fórmulas y Cálculos**: Se emplearon para automatizar el proceso de asignación de estado de los *campers*.
 
-ESTE SISTEMA SE INICIA CON MAIN.PY
+---
 
-EMPLEO DE DATOS GUARDADOS EN UN JSON.DATA
+## ⚙️ Estructura del Proyecto
 
-**ERRORES:**
+- El sistema se inicia con el archivo `main.py`.
+- Los datos se almacenan en un archivo `json.data` para persistencia y fácil acceso.
 
-GENERO UN ERROR Q NO REGISTRA AL CAMPER.
-NO GUARDABA LA EVALUATIONS NI COORDINATION ABRIA CARPETA CAMPERS.
-REPORTES NO GENERABA EL REPORTE.
-UTILS ERROR CON GUARDADO.
+---
 
-**ACTUALIZACION:**
+## 🔄 Funcionamiento
 
-SE PUDO ARREGLAR EL ERROR DEL CAMPER ERROR Q ESTABA EN EL UTILS Q NO GUARDABA A EL MODULO JSON.
-ARREGLO DEL ERROR DE ENROLLMENTS, COORDINATION Y EVALUATIONS.
+1. **Ingreso de Calificaciones**: 
+   Los *trainers* y *coordinadores* ingresan las calificaciones de los *campers*.
 
+2. **Análisis Automático**: 
+   El sistema asigna automáticamente el estado del *camper* (si está en riesgo o matriculado) según la calificación ingresada.
 
+3. **Generación de Reportes**: 
+   El sistema genera reportes detallados con la información de calificaciones y estado de los *campers*.
+
+---
+
+## 🐞 Errores Iniciales
+
+Durante el desarrollo, se identificaron los siguientes errores:
+
+- **No registro del *camper***: El sistema no registraba correctamente a los *campers*.
+- **Problemas en la *evaluations* y *coordination***: Las calificaciones y la coordinación no se guardaban correctamente.
+- **Generación de Reportes**: Los reportes no se generaban adecuadamente.
+- **Error en el módulo `utils`**: Impedía el guardado correcto de datos en el archivo `json.data`.
+
+---
+
+## 🔧 Actualizaciones y Correcciones
+
+Las siguientes correcciones fueron implementadas:
+
+- Se solucionó el **registro de *campers***.
+- El error en el módulo `utils` fue corregido, permitiendo el guardado adecuado de los datos.
+- Se arregló el manejo de **evaluations** y **coordination**.
+- Los **reportes** ahora se generan correctamente, mostrando toda la información relevante.
+
+---
+
+## 📝 Instrucciones de Uso
+
+1. **Clonar el Repositorio**:
+   ```bash
+   git clone https://github.com/tu_usuario/tu_repositorio.git
